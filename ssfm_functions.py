@@ -20,7 +20,16 @@ import os
 
 from datetime import datetime
 
-
+params = {"text.color" : "purple",
+          "axes.labelcolor" : "purple",   # x and y labels 坐标轴标题颜色
+          "xtick.color" : "purple",        # x轴刻度和数值颜色
+          "ytick.color" : "purple",     # y轴刻度和数值颜色
+          'axes.edgecolor': '(0,0,0,0)',     # 图边框颜色'purple'
+          'legend.framealpha': 0,     # 图例透明度
+          'legend.edgecolor': 'purple',  # 图例边框颜色
+          'legend.facecolor': '(0,0,0,0)',  # 图例背景颜色
+          }
+plt.rcParams.update(params)
 
 
 
@@ -543,8 +552,8 @@ class fiber_class:
 
         print(f'Fiber gamma [1/W/m] \t= {self.gamma} ', file = destination)
         
-        for i, beta_n in enumerate(beta_list):
-            print(f'Fiber beta{i+2} [s^{i+2}/m] \t= {self.beta_list[i]} ', file = destination)
+        for i, beta_n in enumerate(self.beta_list):
+            print(f'Fiber beta{i+2} [s^{i+2}/m] \t= {beta_n}', file = destination)
         
         print(f'Fiber alpha_dB_per_m \t= {self.alpha_dB_per_m} ', file = destination)
         print(f'Fiber alpha_Np_per_m \t= {self.alpha_Np_per_m} ', file = destination)
@@ -1300,7 +1309,7 @@ def describe_sim_parameters(fiber:fiber_class,input_signal:input_signal_class,fi
         
         Lmin = np.min(length_list)/scalingfactor*1e-1 
         Lmax = fiber.Length/scalingfactor*1e2
-        ax.set_xlim(Lmin ,Lmax )
+        # ax.set_xlim(Lmin ,Lmax )
 
         plt.savefig(f'Length_chart_{fiber_index}.png', 
                     bbox_inches ="tight",
@@ -1663,7 +1672,7 @@ def saveplot(basename):
     if basename.lower().endswith(('.pdf','.png','.jpg')) == False:
         basename+='.png'
         
-    plt.savefig(basename, bbox_inches='tight', pad_inches=0)
+    plt.savefig(basename, bbox_inches='tight', pad_inches=0, transparent=True, dpi=500)
 
 
 def unpackZvals(ssfm_result_list):

@@ -1,0 +1,25 @@
+Info about fiber
+ ### Characteristic parameters of fiber: ###
+Fiber Length [km] 	= 1.0 
+Number of Steps 	= 256 
+dz [m] 	= 3.90625 
+Fiber gamma [1/W/m] 	= 0 
+Fiber beta2 [s^2/m] 	= 0
+Fiber beta3 [s^3/m] 	= 1e-36
+Fiber beta4 [s^4/m] 	= 0.0
+Fiber beta5 [s^5/m] 	= 0.0
+Fiber beta6 [s^6/m] 	= 0.0
+Fiber beta7 [s^7/m] 	= 0.0
+Fiber beta8 [s^8/m] 	= 0.0
+Fiber alpha_dB_per_m 	= 0 
+Fiber alpha_Np_per_m 	= 0.0 
+Fiber total loss [dB] 	= 0 
+Raman Model 	= None. (fR,tau1,tau2)=(0.0,0.0,0.0) 
+ 
+ 
+ ### Characteristic parameters of simulation: ###
+  Length_fiber 	= 1.00e+00 km
+  Length_disp_3 	= 1.00e+00 km
+  Length_NL 	= 1.00e+97 km
+  N_soliton 	= nan
+  N_soliton^2 	= nan
